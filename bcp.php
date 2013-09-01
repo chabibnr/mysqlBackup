@@ -41,6 +41,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'):
                                                         $insertvalue[]  = "'".str_replace("\n","\\n",addslashes($row[$i]))."'";
                                                 }
                                                 $qc .= "\n INSERT INTO $key VALUES (".  implode(',',$insertvalue)."); \n";
+                                                unset($insertvalue);
                                         }
                                 }
                         }
